@@ -9,7 +9,7 @@ def initialize_model():
     prep = MJ1_Preprocessor(optimize=True)
 
     pred = MJ1_Predictor(
-        model_path='/home/michiel/Paper-Electrophilic-AI/models/electrophilicity_index.tf',
+        model_path='models/electrophilicity_index.tf',
         validator=val,
         preprocessor=prep)
     
@@ -18,11 +18,11 @@ def initialize_model():
 def main():
 
     # Initialize the models
-    
+
     predictor = initialize_model()
 
     # load the data
-    data = pd.read_csv('/home/michiel/Paper-Electrophilic-AI/datasets/gdb11_10ha_cnos_dienophiles.csv')
+    data = pd.read_csv('datasets/gdb11_10ha_cnos_dienophiles.csv')
 
     # make the predictions
     smiles_list = data['smiles'].tolist()
