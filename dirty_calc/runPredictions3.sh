@@ -15,4 +15,4 @@ module purge
 
 module load OpenBabel/3.1.1-gompi-2023a
 
-python dirty_calc/predict3.py
+python predict3.py

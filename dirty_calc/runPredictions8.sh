@@ -15,4 +15,4 @@ module purge
 
 module load OpenBabel/3.1.1-gompi-2023a
 
-python dirty_calc/predict8.py
+python predict8.py
