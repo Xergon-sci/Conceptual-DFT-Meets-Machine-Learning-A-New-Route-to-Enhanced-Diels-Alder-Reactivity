@@ -24,8 +24,6 @@ def main():
     # load the data
     data = pd.read_csv('datasets/gdb11_10ha_cnos_dienophiles.csv')
 
-    data = data.head(100)
-
     # make the predictions
     smiles_list = data['smiles'].tolist()
     predictions = predictor.predict(smiles_list)
