@@ -13,6 +13,6 @@ cd $SLURM_SUBMIT_DIR
 
 module purge
 
-module load OpenBabel/3.1.1-gompi-2023a
+module load SciPy-bundle/2023.07-gfbf-2023a
 
 python dirty_calc/predict1.py
