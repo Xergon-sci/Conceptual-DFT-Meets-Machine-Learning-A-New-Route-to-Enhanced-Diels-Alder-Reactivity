@@ -24,10 +24,7 @@ def main():
     data = pd.read_csv('dirty_calc/gdb11_10ha_cnos_dienophiles_8.csv')
 
     # make the predictions
-    smiles_list = data['smiles'].tolist()
-    predictions = predictor.predict(smiles_list)
-    predictions = list(flatten(predictions['dense_2']))
-    data = data.assign(predicted_w_eV=predictions)
+    data['predicted_w_eV'] = data['smiles'].apply(predictor.predict)
 
     # save them to file
     data.to_csv('dirty_calc/gdb11_10ha_cnos_dienophiles_predictions_8.csv', index=False)

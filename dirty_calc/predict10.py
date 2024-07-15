@@ -6,7 +6,7 @@ from adftPerformance.models.MJ1 import MJ1_Validator, MJ1_Preprocessor, MJ1_Pred
 
 def initialize_model():
     val = MJ1_Validator(input='smiles')
-    prep = MJ1_Preprocessor(optimize=True)
+    prep = MJ1_Preprocessor(optimize=True, cycles=10000)
 
     pred = MJ1_Predictor(
         model_path='models/electrophilicity_index.tf',
@@ -24,10 +24,7 @@ def main():
     data = pd.read_csv('dirty_calc/gdb11_10ha_cnos_dienophiles_10.csv')
 
     # make the predictions
-    smiles_list = data['smiles'].tolist()
-    predictions = predictor.predict(smiles_list)
-    predictions = list(flatten(predictions['dense_2']))
-    data = data.assign(predicted_w_eV=predictions)
+    data['predicted_w_eV'] = data['smiles'].apply(predictor.predict)
 
     # save them to file
     data.to_csv('dirty_calc/gdb11_10ha_cnos_dienophiles_predictions_10.csv', index=False)
