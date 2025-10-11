@@ -18,7 +18,6 @@ def initialize_model():
 def main():
 
     # Initialize the models
-
     predictor = initialize_model()
 
     # load the data
