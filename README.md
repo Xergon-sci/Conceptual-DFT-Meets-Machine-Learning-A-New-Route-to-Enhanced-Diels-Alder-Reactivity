@@ -32,4 +32,4 @@ pred = MJ1_Predictor(
 # use the predictor
 predictions = predictor.predict("C1CCC(CC1)CC(O)O") # or pass a list of SMILES
 ```
-A full exaple is can be seen [here](code/predict.py).
+A full exaple can be seen [here](code/predict.py).
