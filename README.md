@@ -1,6 +1,7 @@
 # Conceptual DFT Meets Machine Learning: A New Route to Enhanced Diels-Alder Reactivity
 
-DOI Paper: 
+DOI Paper:
+
 DOI Model: 10.5281/zenodo.17380445
 
 This repository contains the code, data, and scripts associated with the forthcoming manuscript _“Conceptual DFT Meets Machine Learning: A New Route to Enhanced Diels–Alder Reactivity”_.
